@@ -1,5 +1,6 @@
 /**
-  
+ * This class represent the data object
+ * @Fares Elkhouli and @Zhiyu Feng
  @author  
  */
 public class Team 
