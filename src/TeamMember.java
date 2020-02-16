@@ -33,16 +33,18 @@ public class TeamMember
     * @param teammember object
     * @return true if name and startdate are the same, false if they are not
     */
+   @Override
    public boolean equals(Object obj)
    {
       //name and startDate must be the same
-      return (obj.name.equals(this.name) && obj.getStartDate.equals(starDate));
+      return (obj.name.equals(this.name) && obj.getStartDate.equals(this.starDate));
    }
 
    /**
     * String representation of a teammember
     * @return string representation of a teammember
     */
+   @Override
    public String toString()
    {
        //name + " " + startDate;
