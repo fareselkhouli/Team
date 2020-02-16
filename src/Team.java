@@ -18,20 +18,41 @@ public class Team
    {
        
    }
-   
+
+   /**
+    * doubles team array size and copies over elements
+    */
    private void grow()
    {
-       
+      //double array size
+      int doubler = 2;
+      old = team;
+      team = new TeamMember[old.length * doubler];
+
+      //copy over old elements
+      for(int i = 0; i < old.length; ++i){
+         team[i] = old[i];
+      }
+
    }
    
    public boolean isEmpty()
    {
        
    }
-   
+
+   /**
+    * This method adds a new teammember to the team. It also calls grow() when array is full.
+    * @param teammember to be added
+    */
    public void add(TeamMember m)
-   {     
-            
+   {
+      if (numMembers == team.length){
+         grow();
+      }
+
+      team[numMembers] = m;
+      numMembers++;
    }
    
    public boolean remove(TeamMember m)
