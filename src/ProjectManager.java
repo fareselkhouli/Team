@@ -1,6 +1,7 @@
 /**
- 
- @author  
+ *This class manage the inputs and outputs in the program
+ *@FaresElkhouli
+ *@ZhiyuFeng  
  */
  
 public class ProjectManager
@@ -14,7 +15,8 @@ public class ProjectManager
       while ( !done )
       {
          String command = stdin.next();
-         char ccommand=command.charAt(0)
+         StringTokenizer commandTok = new StringTokenizer(command," ");
+         char ccommand = commandTok.nextToken().charAt(0);
          switch (ccommand)  
          {   
             case 'A': add();
@@ -27,10 +29,8 @@ public class ProjectManager
             System.out.print("The team is ready to go!");
             break;
             default: //deal with bad command here 
-            	if (ccommand != 'A' || ccommand != 'R' || ccommand != 'P'
-            	|| ccommand != 'Q') {
             System.out.print("Command"+"'"+command+"'"+"not supported!");		
-            	}
+         }
          }  
       }
       //write java code before you terminate the program
@@ -41,7 +41,7 @@ public class ProjectManager
       	//must check if the date is valid
 	//must call the contains() method to check if a given 
 	//team member is in the team already
-	   if(isVaild(Team.date) == false) {
+	   if(!Team.date.isVaild()) {
 		   System.out.print(Team.startDate+"is not a vaild date!");
 		   return;
 	   }
@@ -49,7 +49,7 @@ public class ProjectManager
 		   System.out.print(Team.name+Team.startDate+"is already in the team.");
 		   return;
 	   }
-	   add(Team[]);
+	   cs213.add();
 	   
    }
    
@@ -60,7 +60,7 @@ public class ProjectManager
 		   System.out.print(Team.date+"is not a vaild date!");
 		   return;
 	   }
-	   remove(Team[]);
+	   cs213.remove();
    }
    
    private void print()
@@ -71,9 +71,7 @@ public class ProjectManager
 		   System.out.print("We have 0 team members!");
 	   } else {
 		   System.out.print("We have the following team members:");
-		   while (count <= Team.length) {
-			   System.out.print(Team[count].name+Team[count].startDate);
-			   count++;
+		   cs213.print();
 		   }
 		   System.out.print("-- end of the list --");
 	   }

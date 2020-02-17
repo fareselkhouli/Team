@@ -1,7 +1,7 @@
 /**
- * This class represent the data object
- * @Fares Elkhouli and @Zhiyu Feng
- @author  
+ * This class represent the team object
+ * @FaresElkhouli
+ * @ZhiyuFeng 
  */
 public class Team 
 {
@@ -21,14 +21,13 @@ public class Team
    private int find(TeamMember m)
    {
 	   int a = 0;
-       while(a != team.length) {
-    	   if (team[a].name == m.name && team[a].startDate == m.startDate) {
-    		   remove(team[a]);
-    		   break;
+       while(a <= team.length) {
+    	   if ((team[a].name).equals(m.name) && (team[a].startDate).equals(m.startDate)) {
+    		   return a;
     	   }
     	   a++;
        }
-       return a;
+       return -1;
    }
 
    /**
@@ -83,10 +82,13 @@ public class Team
    public boolean remove(TeamMember m)
    {
 	   int a=find(m);
+	   if (a == -1) {
+		   return false;
+	   }
 	   TeamMember [] newarray;
        newarray = new TeamMember[numMembers-1];
        int count=0,number=0;
-       while(count != numMembers) {
+       while(count <= numMembers) {
     	   if(count == a) {
     		   continue;
     	   }
@@ -103,23 +105,23 @@ public class Team
     */
    public boolean contains(TeamMember m)
    {
-      int x=0;
-      while(x != team.length) {
-   	   if (team[x].name == m.name && team[x].startDate == m.startDate) {
-   		   return false;
-   		   break;
-   	   }
-   	   x++;
-      }
-      return true;
-   } 
+	      int x=0;
+	      while(x <= team.length) {
+	   	   if ((team[x].name).equals(m.name) && (team[x].startDate).equals(m.startDate)) {
+	   		   return false;
+	   		   break;
+	   	   }
+	   	   x++;
+	      }
+	      return true;
+	   } 
    
    public void print()
    {
       //set up a for loop and call the toString() method
 	   int count = 0;
 		   while (count <= team.length) {
-			   System.out.print(team[count].name+toString());
+			   System.out.print(team[count].name+team[count].startDate.toString());
 			   count++;
 		   }
 
