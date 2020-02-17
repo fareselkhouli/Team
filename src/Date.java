@@ -122,11 +122,4 @@ public class Date
       }
    }
 
-   /**
-    * main method to test functions
-    * @param args
-    */
-   public static void main(String[] args){
-
-   }
 }
