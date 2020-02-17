@@ -37,12 +37,12 @@ public class Team
    {
       //double array size
       int doubler = 2;
-      old = team;
-      team = new TeamMember[old.length * doubler];
+      TeamMember[] oldarray = team;
+      team = new TeamMember[oldarray.length * doubler];
 
       //copy over old elements
-      for(int i = 0; i < old.length; ++i){
-         team[i] = old[i];
+      for(int i = 0; i < oldarray.length; ++i){
+         team[i] = oldarray[i];
       }
 
    }
@@ -87,8 +87,10 @@ public class Team
 	   if (a == -1) {
 		   return false;
 	   }
-	   m[a]=m[numMembers-1];
-	   m[numMembers-1]=null;
+	   team[a]=team[numMembers-1];
+	   team[numMembers-1]=null;
+	   numMembers--;
+	   return true;
    } 
    
    /**
@@ -99,14 +101,10 @@ public class Team
     */
    public boolean contains(TeamMember m)
    {
-	      int x=0;
-	      while(x <= team.length) {
-	   	   if ((team[x].name).equals(m.name) && (team[x].startDate).equals(m.startDate)) {
-	   		   return false;
-	   		   break;
-	   	   }
-	   	   x++;
-	      }
+	     int index = find(m);
+	     if(index == -1) {
+	    	 return false;
+	     } 
 	      return true;
 	   } 
    /**
