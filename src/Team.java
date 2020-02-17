@@ -1,15 +1,15 @@
 /**
  * This class represent the team object
  * @FaresElkhouli
- * @ZhiyuFeng 
+ * @ZhiyuFeng
  */
-public class Team 
+public class Team
 {
    private final int NOT_FOUND = -1;
    private final int GROW_SIZE = 4; //initial and grow size
    private TeamMember [] team;
    private int numMembers;
-   
+
    public Team()
    {
       //this is the default constructor
@@ -21,13 +21,15 @@ public class Team
    private int find(TeamMember m)
    {
 	   int i = 0;
+     int invalid = -1;
+
        while(i <= team.length) {
-    	   if ((team[i].equals(m)) {
-    		   return a;
+    	   if (team[i].equals(m)) {
+    		   return i;
     	   }
-    	   a++;
+    	   i++;
        }
-       return -1;
+       return invalid;
    }
 
    /**
@@ -72,9 +74,9 @@ public class Team
       team[numMembers] = m;
       numMembers++;
    }
-   
+
    /**
-    * 
+    *
     * This method removes a teammember from the team. If the find method find the same name
     * and the date it will remove the team member with the last member in the list and set the last
     * member in the list to null.
@@ -87,12 +89,12 @@ public class Team
 	   if (a == -1) {
 		   return false;
 	   }
-	   team[a]=team[numMembers-1];
-	   team[numMembers-1]=null;
+	   team[a] = team[numMembers-1];
+	   team[numMembers-1] = null;
 	   numMembers--;
 	   return true;
-   } 
-   
+   }
+
    /**
     * If the teammember is already in the team, return false, else return true.
     * @param m
@@ -104,9 +106,9 @@ public class Team
 	     int index = find(m);
 	     if(index == -1) {
 	    	 return false;
-	     } 
+	     }
 	      return true;
-	   } 
+	   }
    /**
     * this method prints out every team members name and start date.
     */
@@ -120,3 +122,4 @@ public class Team
 		   }
 
    }
+}

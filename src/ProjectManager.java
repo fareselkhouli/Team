@@ -8,7 +8,7 @@ import java.util.StringTokenizer;
 
 public class ProjectManager
 {
-   Scanner stdin;
+   Scanner stdin = new Scanner(System.in);
    Team cs213;
    public void run()
    {
@@ -44,9 +44,9 @@ public class ProjectManager
             default: //deal with bad command here
             System.out.print("Command"+"'"+command+"'"+"not supported!");
          }
-
       }
       //write java code before you terminate the program
+      return;
    } //run()
    /**
     * This is the method to call the method add in the team class.
@@ -56,8 +56,9 @@ public class ProjectManager
       	//must check if the date is valid
 	//must call the contains() method to check if a given
 	//team member is in the team already
-	   if(!inMember.getStartDate().isVaild()) {
-		   System.out.println(inMember.toString() + " is not a vaild date!");
+     Date inStartDate = inMember.getStartDate();
+	   if(!inStartDate.isVaild()) {
+		   System.out.println(inStartDate.toString() + " is not a vaild date!");
 		   return;
 	   }
 	   if(cs213.contains(inMember)) {
@@ -73,8 +74,9 @@ public class ProjectManager
    private void remove(TeamMember outMember)
    {
       //must check if the date is valid
-      if(!outMember.getStartDate().isVaild()) {
- 		   System.out.println(outMember.toString() + " is not a vaild date!");
+      Date outStartDate = outMember.getStartDate();
+      if(!outStartDate.isVaild()) {
+ 		   System.out.println(outStartDate.toString() + " is not a vaild date!");
  		   return;
  	   }
 	   cs213.remove(outMember);
