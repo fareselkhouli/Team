@@ -76,7 +76,8 @@ public class Team
    /**
     * 
     * This method removes a teammember from the team. If the find method find the same name
-    * and the date it will remove the team member.
+    * and the date it will remove the team member with the last member in the list and set the last
+    * member in the list to null.
     * @param teammember to be removed
     * @returns false when can't find the member
     */
@@ -86,17 +87,8 @@ public class Team
 	   if (a == -1) {
 		   return false;
 	   }
-	   TeamMember [] newarray;
-       newarray = new TeamMember[numMembers-1];
-       int count=0,number=0;
-       while(count <= numMembers) {
-    	   if(count == a) {
-    		   continue;
-    	   }
-    	   newarray[number] = team[count]; 
-    	   count++;
-    	   number++;
-       }
+	   m[a]=m[numMembers-1];
+	   m[numMembers-1]=null;
    } 
    
    /**
