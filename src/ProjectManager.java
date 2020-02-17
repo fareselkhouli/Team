@@ -26,7 +26,10 @@ public class ProjectManager
               add(m);
 		          break;
             case 'R':
-              remove();
+              String name = commandTok.nextToken();
+              Date startdate = new Date(commandTok.nextToken());
+              TeamMember m = new TeamMember(name,startdate);
+              remove(m);
               break;
             case 'P':
               print();
