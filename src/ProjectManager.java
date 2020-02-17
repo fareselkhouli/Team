@@ -1,4 +1,5 @@
 import java.util.StringTokenizer;
+import java.util.Scanner;
 
 /**
  *This class manage the inputs and outputs in the program

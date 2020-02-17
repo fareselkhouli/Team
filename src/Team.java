@@ -85,11 +85,11 @@ public class Team
     */
    public boolean remove(TeamMember m)
    {
-	   int a=find(m);
-	   if (a == -1) {
+	   int memberIndex =find(m);
+	   if (memberIndex == -1) {
 		   return false;
 	   }
-	   team[a] = team[numMembers-1];
+	   team[memberIndex] = team[numMembers-1];
 	   team[numMembers-1] = null;
 	   numMembers--;
 	   return true;
