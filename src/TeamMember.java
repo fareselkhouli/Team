@@ -38,7 +38,7 @@ public class TeamMember
    {
       //name and startDate must be the same
       TeamMember currMember = (TeamMember) obj;
-      return (currMember.name.equals(this.name) && currMember.startDate.equals(this.startDate));
+      return (currMember.name.equals(this.name) && currMember.getStartDate().equals(this.startDate));
    }
 
    /**

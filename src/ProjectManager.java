@@ -1,3 +1,5 @@
+import java.util.StringTokenizer;
+
 /**
  *This class manage the inputs and outputs in the program
  *@FaresElkhouli
@@ -20,16 +22,16 @@ public class ProjectManager
          switch (ccommand)
          {
             case 'A':
-              String name = commandTok.nextToken();
-              Date startdate = new Date(commandTok.nextToken());
-              TeamMember m = new TeamMember(name,startdate);
-              add(m);
+              String currentName = commandTok.nextToken();
+              Date currentStartDate = new Date(commandTok.nextToken());
+              TeamMember currentMember = new TeamMember(currentName,currentStartDate);
+              add(currentMember);
 		          break;
             case 'R':
-              String name = commandTok.nextToken();
-              Date startdate = new Date(commandTok.nextToken());
-              TeamMember m = new TeamMember(name,startdate);
-              remove(m);
+              String currentName = commandTok.nextToken();
+              Date currentStartDate = new Date(commandTok.nextToken());
+              TeamMember currentMember = new TeamMember(currentName,currentStartDate);
+              remove(currentMember);
               break;
             case 'P':
               print();
@@ -37,6 +39,7 @@ public class ProjectManager
             case 'Q':
               print();
               System.out.print("The team is ready to go!");
+              done = true;
               break;
             default: //deal with bad command here
             System.out.print("Command"+"'"+command+"'"+"not supported!");
@@ -48,33 +51,33 @@ public class ProjectManager
    /**
     * This is the method to call the method add in the team class.
     */
-   private void add(TeamMember m)
+   private void add(TeamMember inMember)
    {
       	//must check if the date is valid
 	//must call the contains() method to check if a given
 	//team member is in the team already
-	   if(!m.startDate.isVaild()) {
-		   System.out.println(m.startDate.toString() + " is not a vaild date!");
+	   if(!inMember.startDate.isVaild()) {
+		   System.out.println(inMember.getStartDate().toString() + " is not a vaild date!");
 		   return;
 	   }
-	   if(cs213.contains(m)) {
-		   System.out.println(m.name + m.startDate.toString() + " is already in the team.");
+	   if(cs213.contains(inMember)) {
+		   System.out.println(inMember.name + inMember.getStartDate().toString() + " is already in the team.");
 		   return;
 	   }
-	   cs213.add(m);
+	   cs213.add(inMember);
      return;
    }
    /**
     * This is the method to calls the remove method in the Team section.
     */
-   private void remove(TeamMember m)
+   private void remove(TeamMember outMember)
    {
       //must check if the date is valid
-      if(!m.startDate.isVaild()) {
- 		   System.out.println(m.startDate.toString() + " is not a vaild date!");
+      if(!outMember.getStartDate().isVaild()) {
+ 		   System.out.println(outMember.getStartDate().toString() + " is not a vaild date!");
  		   return;
  	   }
-	   cs213.remove(m);
+	   cs213.remove(outMember);
      return;
    }
    /**
