@@ -16,7 +16,7 @@ public class Team
    }
    /**
     * Search for the member to be removed
-    * 
+    * @returns the a for the place the member in, -1 for the one can't be found.
     */
    private int find(TeamMember m)
    {
@@ -48,7 +48,7 @@ public class Team
    }
    /**
     * If the list is empty, return true, else return false.
-    * @return
+    * @return true when the list is empty, returns false when the list is not empty.
     */
    public boolean isEmpty()
    {
@@ -76,8 +76,9 @@ public class Team
    /**
     * 
     * This method removes a teammember from the team. If the find method find the same name
-    * and the date it will remove the teammember.
+    * and the date it will remove the team member.
     * @param teammember to be removed
+    * @returns false when can't find the member
     */
    public boolean remove(TeamMember m)
    {
@@ -101,7 +102,8 @@ public class Team
    /**
     * If the teammember is already in the team, return false, else return true.
     * @param m
-    * @return
+    * @return false when the team member is in the team, returns true when the team member is
+    * not in the team.
     */
    public boolean contains(TeamMember m)
    {
@@ -115,7 +117,9 @@ public class Team
 	      }
 	      return true;
 	   } 
-   
+   /**
+    * this method prints out every team members name and start date.
+    */
    public void print()
    {
       //set up a for loop and call the toString() method

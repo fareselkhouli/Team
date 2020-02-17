@@ -35,7 +35,9 @@ public class ProjectManager
       }
       //write java code before you terminate the program
    } //run()
-   
+   /**
+    * This is the method to call the method add in the team class.
+    */
    private void add()
    {
       	//must check if the date is valid
@@ -52,7 +54,9 @@ public class ProjectManager
 	   cs213.add();
 	   
    }
-   
+   /**
+    * This is the method to calls the remove method in the Team section.
+    */
    private void remove()
    {
       //must check if the date is valid
@@ -62,7 +66,9 @@ public class ProjectManager
 	   }
 	   cs213.remove();
    }
-   
+   /**
+    * This is the method to print out the whole team chart.
+    */
    private void print()
    {
       //must check if the team has 0 members. 
