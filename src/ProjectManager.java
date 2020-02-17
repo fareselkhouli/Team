@@ -56,7 +56,7 @@ public class ProjectManager
       	//must check if the date is valid
 	//must call the contains() method to check if a given
 	//team member is in the team already
-	   if(!inMember.startDate.isVaild()) {
+	   if(!inMember.getStartDate().isVaild()) {
 		   System.out.println(inMember.toString() + " is not a vaild date!");
 		   return;
 	   }
