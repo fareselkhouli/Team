@@ -20,9 +20,9 @@ public class Team
     */
    private int find(TeamMember m)
    {
-	   int a = 0;
-       while(a <= team.length) {
-    	   if ((team[a].name).equals(m.name) && (team[a].startDate).equals(m.startDate)) {
+	   int i = 0;
+       while(i <= team.length) {
+    	   if ((team[i].equals(m)) {
     		   return a;
     	   }
     	   a++;
@@ -115,7 +115,7 @@ public class Team
       //set up a for loop and call the toString() method
 	   int count = 0;
 		   while (count <= team.length) {
-			   System.out.print(team[count].name+team[count].startDate.toString());
+			   System.out.print(team[count].toString());
 			   count++;
 		   }
 

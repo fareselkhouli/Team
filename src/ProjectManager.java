@@ -22,16 +22,16 @@ public class ProjectManager
          switch (ccommand)
          {
             case 'A':
-              String currentName = commandTok.nextToken();
-              Date currentStartDate = new Date(commandTok.nextToken());
-              TeamMember currentMember = new TeamMember(currentName,currentStartDate);
-              add(currentMember);
+              String currentName1 = commandTok.nextToken();
+              Date currentStartDate1 = new Date(commandTok.nextToken());
+              TeamMember currentMember1 = new TeamMember(currentName1,currentStartDate1);
+              add(currentMember1);
 		          break;
             case 'R':
-              String currentName = commandTok.nextToken();
-              Date currentStartDate = new Date(commandTok.nextToken());
-              TeamMember currentMember = new TeamMember(currentName,currentStartDate);
-              remove(currentMember);
+              String currentName2 = commandTok.nextToken();
+              Date currentStartDate2 = new Date(commandTok.nextToken());
+              TeamMember currentMember2 = new TeamMember(currentName2,currentStartDate2);
+              remove(currentMember2);
               break;
             case 'P':
               print();
@@ -57,11 +57,11 @@ public class ProjectManager
 	//must call the contains() method to check if a given
 	//team member is in the team already
 	   if(!inMember.startDate.isVaild()) {
-		   System.out.println(inMember.getStartDate().toString() + " is not a vaild date!");
+		   System.out.println(inMember.toString() + " is not a vaild date!");
 		   return;
 	   }
 	   if(cs213.contains(inMember)) {
-		   System.out.println(inMember.name + inMember.getStartDate().toString() + " is already in the team.");
+		   System.out.println(inMember.toString() + " is already in the team.");
 		   return;
 	   }
 	   cs213.add(inMember);
@@ -74,7 +74,7 @@ public class ProjectManager
    {
       //must check if the date is valid
       if(!outMember.getStartDate().isVaild()) {
- 		   System.out.println(outMember.getStartDate().toString() + " is not a vaild date!");
+ 		   System.out.println(outMember.toString() + " is not a vaild date!");
  		   return;
  	   }
 	   cs213.remove(outMember);
