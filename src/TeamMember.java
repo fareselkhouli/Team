@@ -56,5 +56,26 @@ public class TeamMember
    {
       //testbed main; you must include test cases that exercise 
       //the constructor and all methods in this class.
+      Date testDate = new Date("1/20/2015");
+      String testName = "John";
+
+      //test constructor
+      TeamMember testMember = new TeamMember(testName,testDate);
+
+      //test getstartdate
+      Date getDateTest = testMember.getStartDate();
+
+      //test equals
+      Date testDate2 = new Date("1/20/2015");
+      String testName2 = "John";
+      TeamMember testMember2 = new TeamMember(testName2,testDate2);
+
+      boolean checkEquality = testMember.equals(testMember);
+      System.out.println(checkEquality);
+
+      //test toString()
+      testMember.toString();
+
+      return;
    }
 }
