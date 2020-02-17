@@ -3,7 +3,7 @@
  @FaresElkhouli
  @ZhiyuFeng
  */
-public class TeamMember 
+public class TeamMember
 {
    private String name;
    private Date   startDate;
@@ -37,7 +37,8 @@ public class TeamMember
    public boolean equals(Object obj)
    {
       //name and startDate must be the same
-      return (obj.name.equals(this.name) && obj.getStartDate.equals(this.starDate));
+      TeamMember currMember = (TeamMember) obj;
+      return (currMember.name.equals(this.name) && currMember.startDate.equals(this.startDate));
    }
 
    /**
@@ -48,13 +49,13 @@ public class TeamMember
    public String toString()
    {
        //name + " " + startDate;
-      return name + " " + date.toString();
+      return this.name + " " + this.startDate.toString();
 
    }
 
    public static void main(String [] args)
    {
-      //testbed main; you must include test cases that exercise 
+      //testbed main; you must include test cases that exercise
       //the constructor and all methods in this class.
       Date testDate = new Date("1/20/2015");
       String testName = "John";
