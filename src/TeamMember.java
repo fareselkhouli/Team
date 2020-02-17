@@ -75,7 +75,7 @@ public class TeamMember
       System.out.println(checkEquality);
 
       //test toString()
-      testMember.toString();
+      System.out.println(testMember.toString());
 
       return;
    }
