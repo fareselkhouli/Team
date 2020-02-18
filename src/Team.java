@@ -32,7 +32,7 @@ public class Team
        if(numMembers == 0){
            return NOT_FOUND;
        }
-       while(i < team.length) {
+       while(i < numMembers) {
     	   if (team[i].equals(m)) {
     		   return i;
     	   }
@@ -128,8 +128,8 @@ public class Team
    {
       //set up a for loop and call the toString() method
 	   int count = 0;
-		   while (count <= team.length) {
-			   System.out.print(team[count].toString());
+		   while (count < numMembers) {
+			   System.out.println(team[count].toString());
 			   count++;
 		   }
 

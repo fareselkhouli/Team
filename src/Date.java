@@ -91,7 +91,7 @@ public class Date
          return true;
       }
 
-      if(year % Month.QUATERCENTENNIAL != 0){
+      if(year % Month.QUATERCENTENNIAL == 0){
          return true;
       }
 

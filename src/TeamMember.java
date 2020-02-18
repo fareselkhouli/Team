@@ -37,6 +37,9 @@ public class TeamMember
    public boolean equals(Object obj)
    {
       //name and startDate must be the same
+      if(obj == null){
+        return false;
+      }
       TeamMember currMember = (TeamMember) obj;
       return (currMember.name.equals(this.name) && currMember.getStartDate().equals(this.startDate));
    }
