@@ -1,7 +1,7 @@
 /**
-This class calls the ProjectManager class
- @FaresElkhouli
- @ZhiyuFeng
+ * This class calls the ProjectManager class
+ * @author Fares Elkhouli
+ * @author Zhiyu Feng
  */
 public class Prog1
 {

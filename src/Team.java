@@ -2,8 +2,8 @@ import java.io.NotActiveException;
 
 /**
  * This class represent the growable team object
- * @FaresElkhouli
- * @ZhiyuFeng
+ * @author Fares Elkhouli
+ * @author Zhiyu Feng
  */
 public class Team
 {
@@ -23,7 +23,7 @@ public class Team
    }
    /**
     * Search for the member to be removed
-    * @returns int index of member if found, -1 for the one can't be found.
+    * @return int index of member if found, -1 for the one can't be found.
     */
    private int find(TeamMember m)
    {
@@ -72,7 +72,7 @@ public class Team
 
    /**
     * This method adds a new teammember to the team. It also calls grow() when array is full.
-    * @param TeamMember teammember to be added
+    * @param m teammember to be added
     */
    public void add(TeamMember m)
    {
@@ -89,8 +89,8 @@ public class Team
     * This method removes a teammember from the team. If the find method find the same name
     * and the date it will remove the team member with the last member in the list and set the last
     * member in the list to null.
-    * @param TeamMember to be removed
-    * @returns false when can't find the member
+    * @param m team member to be removed
+    * @return false when can't find the member
     */
    public boolean remove(TeamMember m)
    {

@@ -1,9 +1,9 @@
 import java.util.StringTokenizer;
 
 /**
-  This class reresents the date Object in mm/dd/yyyy format
- @FaresElkhouli
- @ZhiyuFeng
+ * This class represents the Date class
+ * @author Fares Elkhouli
+ * @author Zhiyu Feng
  */
 public class Date
 {
@@ -12,7 +12,7 @@ public class Date
    private int  year;
 
    /**creates date object by parsing input string
-    * @param String date string in mm/dd/yyyy format
+    * @param d date string in mm/dd/yyyy format
     */
    public Date(String d)
    {
@@ -25,7 +25,7 @@ public class Date
 
    /**
     * Date constructor that creates date object
-    * @param Date date object
+    * @param d date object to construct
     */
    public Date(Date d)
    {
@@ -78,7 +78,7 @@ public class Date
 
    /**
     * helper method that checks if a year is a leap year or not
-    * @param int year to be tested
+    * @param year year to be tested
     * @return Boolean true if it is a leap year, false if it is not a leap year
     */
    private boolean isLeapYear(int year){
@@ -111,7 +111,7 @@ public class Date
 
    /**
     * Checks if two date objects are equal
-    * @param Date object to be compared
+    * @param obj object to be compared
     * @return Boolean true if both dates are equal, false if the dates are not equal.
     */
    @Override

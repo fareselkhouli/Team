@@ -1,7 +1,7 @@
 /**
- This class represents the team member object
- @FaresElkhouli
- @ZhiyuFeng
+ * This class represents the team member object
+ * @author Fares Elkhouli
+ * @author Zhiyu Feng
  */
 public class TeamMember
 {
@@ -10,8 +10,8 @@ public class TeamMember
 
    /**
     * TeamMember constructor
-    * @param String name of team member
-    * @param Date start date of team member
+    * @param nm name of team member
+    * @param date start date of team member
     */
    public TeamMember(String nm, Date date)
    {
@@ -30,7 +30,7 @@ public class TeamMember
 
    /**
     * checks if two teammembers are equal
-    * @param TeamMember team member to be compared with anothe member
+    * @param obj team member to be compared with anothe member
     * @return Boolean true if name and startdate are the same, false if they are not
     */
    @Override
@@ -65,9 +65,11 @@ public class TeamMember
 
       //test constructor
       TeamMember testMember = new TeamMember(testName,testDate);
+      System.out.println(testMember.toString());
 
       //test getstartdate
       Date getDateTest = testMember.getStartDate();
+      System.out.println(getDateTest.toString());
 
       //test equals
       Date testDate2 = new Date("1/21/2015");
@@ -76,9 +78,6 @@ public class TeamMember
 
       boolean checkEquality = testMember.equals(testMember2);
       System.out.println(checkEquality);
-
-      //test toString()
-      System.out.println(testMember.toString());
 
       return;
    }

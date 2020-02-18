@@ -2,8 +2,8 @@ import java.util.Scanner;
 
 /**
  *This class manage the inputs and outputs in the program
- *@FaresElkhouli
- *@ZhiyuFeng
+ *@author Fares Elkhouli
+ *@author Zhiyu Feng
  */
 
 public class ProjectManager
