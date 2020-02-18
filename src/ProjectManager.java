@@ -9,7 +9,7 @@ import java.util.Scanner;
 public class ProjectManager
 {
    Scanner stdin;
-   Team cs213;
+   Team cs213 = new Team();
    public void run()
    {
        stdin = new Scanner(System.in);
@@ -56,11 +56,12 @@ public class ProjectManager
 		   System.out.println(inStartDate.toString() + " is not a vaild date!");
 		   return;
 	   }
-	   if(cs213.contains(inMember)) {
+	   if((cs213 != null) && cs213.contains(inMember)) {
 		   System.out.println(inMember.toString() + " is already in the team.");
 		   return;
 	   }
 	   cs213.add(inMember);
+	   System.out.println(inMember.toString() + " has joined the team");
      return;
    }
    /**
@@ -77,7 +78,12 @@ public class ProjectManager
  		   System.out.println(outStartDate.toString() + " is not a vaild date!");
  		   return;
  	   }
-	   cs213.remove(outMember);
+	   if ((cs213 != null) || !cs213.remove(outMember)){
+	    System.out.println(outMember.toString() + " is not a team member");
+       }
+	   else{
+	       System.out.println(outMember.toString() + " has left the team.");
+       }
      return;
    }
    /**

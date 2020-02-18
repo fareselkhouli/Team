@@ -30,8 +30,8 @@ public class TeamMember
 
    /**
     * checks if two teammembers are equal
-    * @param teammember object
-    * @return true if name and startdate are the same, false if they are not
+    * @param TeamMember team member to be compared with anothe member
+    * @return Boolean true if name and startdate are the same, false if they are not
     */
    @Override
    public boolean equals(Object obj)
@@ -67,11 +67,11 @@ public class TeamMember
       Date getDateTest = testMember.getStartDate();
 
       //test equals
-      Date testDate2 = new Date("1/20/2015");
+      Date testDate2 = new Date("1/21/2015");
       String testName2 = "John";
       TeamMember testMember2 = new TeamMember(testName2,testDate2);
 
-      boolean checkEquality = testMember.equals(testMember);
+      boolean checkEquality = testMember.equals(testMember2);
       System.out.println(checkEquality);
 
       //test toString()

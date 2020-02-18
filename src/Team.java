@@ -1,5 +1,7 @@
+import java.io.NotActiveException;
+
 /**
- * This class represent the team object
+ * This class represent the growable team object
  * @FaresElkhouli
  * @ZhiyuFeng
  */
@@ -10,26 +12,33 @@ public class Team
    private TeamMember [] team;
    private int numMembers;
 
+    /**
+     * constructor for Team
+     */
    public Team()
    {
       //this is the default constructor
+      team = new TeamMember[GROW_SIZE];
+      numMembers = 0;
    }
    /**
     * Search for the member to be removed
-    * @returns the a for the place the member in, -1 for the one can't be found.
+    * @returns int index of member if found, -1 for the one can't be found.
     */
    private int find(TeamMember m)
    {
-	   int i = 0;
-     int invalid = -1;
+       int i = 0;
 
+       if(numMembers == 0){
+           return NOT_FOUND;
+       }
        while(i < team.length) {
     	   if (team[i].equals(m)) {
     		   return i;
     	   }
     	   i++;
        }
-       return invalid;
+       return NOT_FOUND;
    }
 
    /**
@@ -63,7 +72,7 @@ public class Team
 
    /**
     * This method adds a new teammember to the team. It also calls grow() when array is full.
-    * @param teammember to be added
+    * @param TeamMember teammember to be added
     */
    public void add(TeamMember m)
    {
@@ -80,13 +89,13 @@ public class Team
     * This method removes a teammember from the team. If the find method find the same name
     * and the date it will remove the team member with the last member in the list and set the last
     * member in the list to null.
-    * @param teammember to be removed
+    * @param TeamMember to be removed
     * @returns false when can't find the member
     */
    public boolean remove(TeamMember m)
    {
 	   int memberIndex =find(m);
-	   if (memberIndex == -1) {
+	   if (memberIndex == NOT_FOUND) {
 		   return false;
 	   }
 	   team[memberIndex] = team[numMembers-1];
@@ -97,18 +106,21 @@ public class Team
 
    /**
     * If the teammember is already in the team, return false, else return true.
-    * @param m
+    * @param m team member to be checked
     * @return false when the team member is in the team, returns true when the team member is
     * not in the team.
     */
    public boolean contains(TeamMember m)
    {
+       if(numMembers == 0){
+           return false;
+       }
 	     int index = find(m);
 	     if(index == -1) {
 	    	 return false;
 	     }
 	      return true;
-	   }
+   }
    /**
     * this method prints out every team members name and start date.
     */
