@@ -23,7 +23,7 @@ public class Team
 	   int i = 0;
      int invalid = -1;
 
-       while(i <= team.length) {
+       while(i < team.length) {
     	   if (team[i].equals(m)) {
     		   return i;
     	   }

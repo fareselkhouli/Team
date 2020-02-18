@@ -1,4 +1,3 @@
-import java.util.StringTokenizer;
 import java.util.Scanner;
 
 /**
@@ -9,41 +8,33 @@ import java.util.Scanner;
 
 public class ProjectManager
 {
-   Scanner stdin = new Scanner(System.in);
+   Scanner stdin;
    Team cs213;
    public void run()
    {
-
+       stdin = new Scanner(System.in);
       boolean done = false;
       while ( !done )
       {
-         String command = stdin.next();
-         StringTokenizer commandTok = new StringTokenizer(command," ");
-         char ccommand = commandTok.nextToken().charAt(0);
-         switch (ccommand)
+          String command = stdin.next();
+         switch (command.charAt(0))
          {
             case 'A':
-              String currentName1 = commandTok.nextToken();
-              Date currentStartDate1 = new Date(commandTok.nextToken());
-              TeamMember currentMember1 = new TeamMember(currentName1,currentStartDate1);
-              add(currentMember1);
-		          break;
+                add();
+                break;
             case 'R':
-              String currentName2 = commandTok.nextToken();
-              Date currentStartDate2 = new Date(commandTok.nextToken());
-              TeamMember currentMember2 = new TeamMember(currentName2,currentStartDate2);
-              remove(currentMember2);
-              break;
+                remove();
+                break;
             case 'P':
-              print();
-              break;
+                print();
+                break;
             case 'Q':
-              print();
-              System.out.print("The team is ready to go!");
-              done = true;
-              break;
+                print();
+                System.out.print("The team is ready to go!");
+                done = true;
+                break;
             default: //deal with bad command here
-            System.out.print("Command"+"'"+command+"'"+"not supported!");
+                System.out.print("Command"+"'"+command+"'"+"not supported!");
          }
       }
       //write java code before you terminate the program
@@ -52,13 +43,16 @@ public class ProjectManager
    /**
     * This is the method to call the method add in the team class.
     */
-   private void add(TeamMember inMember)
+   private void add()
    {
       	//must check if the date is valid
 	//must call the contains() method to check if a given
 	//team member is in the team already
-     Date inStartDate = inMember.getStartDate();
-	   if(!inStartDate.isVaild()) {
+       String inName = stdin.next();
+     Date inStartDate = new Date(stdin.next());
+     TeamMember inMember = new TeamMember(inName,inStartDate);
+
+	   if(!inStartDate.isValid()) {
 		   System.out.println(inStartDate.toString() + " is not a vaild date!");
 		   return;
 	   }
@@ -72,11 +66,14 @@ public class ProjectManager
    /**
     * This is the method to calls the remove method in the Team section.
     */
-   private void remove(TeamMember outMember)
+   private void remove()
    {
       //must check if the date is valid
-      Date outStartDate = outMember.getStartDate();
-      if(!outStartDate.isVaild()) {
+       String outName = stdin.next();
+       Date outStartDate = new Date(stdin.next());
+       TeamMember outMember = new TeamMember(outName,outStartDate);
+
+      if(!outStartDate.isValid()) {
  		   System.out.println(outStartDate.toString() + " is not a vaild date!");
  		   return;
  	   }
@@ -89,7 +86,6 @@ public class ProjectManager
    private void print()
    {
       //must check if the team has 0 members.
-	   int count = 0;
 	   if(cs213.isEmpty()) {
 		   System.out.println("We have 0 team members!");
 	   } else {
